@@ -1,0 +1,16 @@
+只能解密单纯的rsa
+没有尝试SHA1withRSA
+
+# 秘钥库文件为 api.jk.cn.pfx
+# 把pfx中的私钥抽离出来
+# 第一次输入秘钥库密码，第二三次输入保护的私钥密码（自己定义的密码）
+
+openssl pkcs12 -in api.jk.cn.pfx -nocerts -out sec_private.key
+
+# 将受到保护的私钥sec_private.key变为未标记保护的私钥prikey.pem
+
+openssl rsa -in sec_private.key -out prikey.pem
+
+# 根据私钥prikey.pem生成公钥pubkey.pem
+
+openssl rsa -in prikey.pem -pubout -out pubkey.pem
