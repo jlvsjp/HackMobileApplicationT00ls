@@ -1,4 +1,4 @@
-package com.4dogs.signtest;
+package com.jielei.signtest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class signOut{
+public class signature{
 
     public static void main(String[] args){
         String text = "";
@@ -17,7 +17,7 @@ public class signOut{
             text = args[0];
         }else{
             StringBuilder sb = new StringBuilder("Usage:\n\t");
-            sb.append("sign_trans_out <payCmaPassWord>");
+            sb.append("sign_trans_in <payCmaPassWord>");
             System.out.println(sb.toString());
             System.exit(0);
         }
@@ -30,8 +30,8 @@ public class signOut{
         mystr.put((String)"channelCardNumber", "6230580000109041496");
         mystr.put((String)"channelCardOwnerName", "郝晋波");
         mystr.put((String)"tagCardId", "39114644");
-        mystr.put((String)"amount", "0.5");
-        mystr.put((String)"transType", "01");
+        mystr.put((String)"amount", "1.0");
+        mystr.put((String)"transType", "00");
         try{
             sign(mystr, b_sign);
         } catch (Exception a){;}

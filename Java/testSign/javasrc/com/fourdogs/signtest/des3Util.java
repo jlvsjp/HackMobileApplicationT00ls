@@ -1,4 +1,4 @@
-package com.4dogs.signtest;
+package com.fourdogs.signtest;
 
 import java.util.Arrays;
 import java.lang.StringBuilder;

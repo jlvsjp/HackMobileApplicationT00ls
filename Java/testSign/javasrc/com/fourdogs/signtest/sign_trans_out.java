@@ -1,4 +1,4 @@
-package com.4dogs.signtest;
+package com.fourdogs.signtest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class signature{
+public class signOut{
 
     public static void main(String[] args){
         String text = "";
@@ -17,7 +17,7 @@ public class signature{
             text = args[0];
         }else{
             StringBuilder sb = new StringBuilder("Usage:\n\t");
-            sb.append("sign_trans_in <payCmaPassWord>");
+            sb.append("sign_trans_out <payCmaPassWord>");
             System.out.println(sb.toString());
             System.exit(0);
         }
@@ -27,11 +27,11 @@ public class signature{
         mystr.put((String)"payCmaPassWord", text);
         mystr.put((String)"channelCode", "PAB");
         mystr.put((String)"channelName", "平安银行");
-        mystr.put((String)"channelCardNumber", "xxxxxx");
-        mystr.put((String)"channelCardOwnerName", "xxx");
-        mystr.put((String)"tagCardId", "xxx");
-        mystr.put((String)"amount", "1.0");
-        mystr.put((String)"transType", "00");
+        mystr.put((String)"channelCardNumber", "6230580000109041496");
+        mystr.put((String)"channelCardOwnerName", "郝晋波");
+        mystr.put((String)"tagCardId", "39114644");
+        mystr.put((String)"amount", "0.5");
+        mystr.put((String)"transType", "01");
         try{
             sign(mystr, b_sign);
         } catch (Exception a){;}
